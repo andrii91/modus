@@ -6,6 +6,7 @@ html {
   -ms-text-size-adjust: 100%;
   -ms-overflow-style: scrollbar;
   -webkit-tap-highlight-color: transparent;
+  height: 100%;
 }
 
 *,
@@ -364,13 +365,13 @@ html {
 
 @media (min-width: 992px) {
   .container {
-    max-width: 960px;
+    max-width: 1020px;
   }
 }
 
 @media (min-width: 1200px) {
   .container {
-    max-width: 1140px;
+    max-width: 1170px;
   }
 }
 

@@ -35,7 +35,7 @@ gulp.task('js', function() {
 gulp.task('js_v', function() {
     gulp.src([
             'src/js/vendor/jquery.js',
-            // 'src/js/vendor/bootstrap.min.js',
+            'src/js/vendor/owl.carousel.min.js',
             // 'src/js/vendor/inputmask.js',
             // 'src/js/vendor/jquery.inputmask.js',
             // 'src/js/vendor/jquery.animateNumber.min.js',
@@ -54,11 +54,6 @@ gulp.task('images', function(){
         .pipe(gulp.dest('dist/images'))
 });
 
-gulp.task('images_css', function(){
-    return gulp.src('src/sass/info/images/**/*.*')
-        .pipe(cache(imagemin()))
-        .pipe(gulp.dest('dist/css/images'))
-});
 
 gulp.task('pages', function(){
     return gulp.src('src/*.html')
@@ -71,6 +66,12 @@ gulp.task('uncss', function () {
             html: ['dist/*.html']
         }))
         .pipe(gulp.dest('dist/css'));
+});
+
+
+gulp.task('fonts', function(){
+    return gulp.src('src/fonts/**/*.*')
+        .pipe(gulp.dest('dist/fonts'))
 });
 
 gulp.task('webserver', function() {
@@ -90,11 +91,10 @@ gulp.task('webserver', function() {
 });
 
 gulp.task('default', function() {
-    gulp.start('pages', 'js', 'js_v', 'sass','uncss', 'images', 'images_css', 'webserver');
+    gulp.start('pages', 'js', 'js_v', 'sass','uncss', 'fonts','images',  'webserver');
     gulp.watch('src/*.html', ['pages']);
     gulp.watch('src/js/*.js', ['js']);
     gulp.watch('src/js/vendor/*.js', ['js_v']);
     gulp.watch('src/sass/**/*.scss', ['sass']);
-    gulp.watch('src/sass/info/images/*', ['images_css']);
     gulp.watch('src/images/**/*.*', ['images']);
 });

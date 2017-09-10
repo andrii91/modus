@@ -2,4 +2,46 @@
 
 @media #{$tabletLandscape} {
     @import '../desktop';
+  .browser:nth-child(2) {
+    margin: 0 -100px;
+  }
+  .mob-btn {
+    display: none;
+  }
+  .menu {
+    display: inline-block;
+    clear: inherit;
+    padding-top: 0;
+    .menu-item  {
+      display: inline-block;
+      text-align: center;
+      .menu-link {
+        text-align: center;
+        &.active {
+          text-align: center;
+        }
+      }
+    }
+  }
+    .menu .menu-item .sub-menu {
+    top: 50px;
+    left: 0;
+  }
+  .search {
+    display: block;
+  }
+  .percent {
+    width: 100px;
+  }
+  .percent-box .dial {
+    height: 100px;
+    width: 100px;
+    line-height: 3;
+    p {
+      font-size: 24px;
+    }
+  }
+  .percent-box {
+    height: 50px;
+  }
 }
