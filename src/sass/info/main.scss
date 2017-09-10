@@ -687,10 +687,10 @@ nav {
 
 .percent-box {
   height: 58px;
-  overflow-y: hidden;
-  div {
+  overflow: hidden;
+ /* div {
     overflow: hidden;
-  }
+  }*/
   .dial {
     border: 15px solid #77c8c1;
 	border-radius: 100%;
